@@ -40,14 +40,14 @@
 
 /* Logo image */
 .menu-logo-img {
-    height: 40px;
+    height: 27px;
     width: auto;
     display: block;
 }
 
 @media (max-width: 640px) {
     .menu-logo-img {
-        height: 32px;
+        height: 22px;
     }
 }
 
@@ -405,7 +405,9 @@ a.no-style:hover {
 .width-toggle {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: var(--spacing-xs);
+    width: 5.5rem;
     padding: var(--spacing-xs) var(--spacing-sm);
     background: none;
     border: 1px solid var(--color-border);

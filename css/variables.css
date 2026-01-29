@@ -35,6 +35,8 @@
    /* Darker border (from table styles) */
    --color-accent-light: #F5F4F2;
    /* Light background accent */
+   --color-background-outer: #F7F7F5;
+   /* Subtle off-white for area outside content column */
    --color-signature: #595959;
    /* Gray for signatures/comments */
 

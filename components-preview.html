@@ -138,6 +138,7 @@
 
     <!-- MAIN CONTENT -->
     <main class="main-content layout-column" id="mainContent">
+        <div class="page">
 
         <!-- Hero Section -->
         <section class="preview-section">
@@ -381,57 +382,63 @@
             </p>
         </footer>
 
+        </div>
     </main>
 
     <!-- JavaScript for Toggle Functionality -->
     <script>
-        // Font T        e
-        const fontToggle = document.getElementById('font        le');
-        const body = de        ody;
+        // Font Toggle
+        const fontToggle = document.getElementById('fontToggle');
+        const body = document.body;
 
-        fontToggle.addEventListener('cl            () => {
-            if (body.classList.contai                -serif')) {
-                body.clas                move('font-serif');
-                         y.classLi                font-sans');
+        fontToggle.addEventListener('click', () => {
+            if (body.classList.contains('font-serif')) {
+                body.classList.remove('font-serif');
+                body.classList.add('font-sans');
             } else {
-                        body.classList.remove('font-            ;
-                        body.classLis        d('font-serif');
+                body.classList.remove('font-sans');
+                body.classList.add('font-serif');
             }
         });
 
-        // Width        gle
-        const widthToggle = document.getElementById('wid        ggle');
-        const mainContent = document.getElementById('mainConte;             const currentWidthMode = document.getElem            d('currentWidthMode');
+        // Width Toggle
+        const widthToggle = document.getElementById('widthToggle');
+        const mainContent = document.getElementById('mainContent');
+        const currentWidthMode = document.getElementById('currentWidthMode');
 
-        widthToggle.addEventLis                lick', () => {
-            if (mainContent.clas                ntains('layout-column')) {
-                               tent.classList.remove('layout-column');
+        widthToggle.addEventListener('click', () => {
+            if (mainContent.classList.contains('layout-column')) {
+                mainContent.classList.remove('layout-column');
                 mainContent.classList.add('layout-full');
                 widthToggle.innerHTML = `
-          <svg class="width-toggle-icon" viewBox="0 0 16 16" fill="currentColor                       <path d="M2 4h12v1H2V4zm0 3h12v1H2V7zm            v1H2v-1z"                     </svg>
+          <svg class="width-toggle-icon" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M2 4h12v1H2V4zm0 3h12v1H2V7zm0 3h12v1H2v-1z"/>
+          </svg>
           Full
         `;
-                        currentWidthMode.textContent = 'Full Width'                      } else {
+                currentWidthMode.textContent = 'Full Width';
+            } else {
                 mainContent.classList.remove('layout-full');
                 mainContent.classList.add('layout-column');
                 widthToggle.innerHTML = `
-          <svg class="width-toggle-icon" v                0 0 16 16" fill="currentColor">
-                     th        M2 4h        H2V4zm0 3h12v1H2V7zm0         1H2v-1z"/>
+          <svg class="width-toggle-icon" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M2 4h12v1H2V4zm0 3h12v1H2V7zm0 3h8v1H2v-1z"/>
           </svg>
           Column
         `;
-                    currentWidthMode.textContent = 'Column';
+                currentWidthMode.textContent = 'Column';
             }
         });
 
-        // Mobile Menu Toggl                const menuToggle = document.getEl        tById        nuToggle');
-        const menuNav = docume        etElementById('menuNav');
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const menuNav = document.getElementById('menuNav');
 
-        menuToggle.addEventListene            ck', () => {
-            menuNav.classL                le('is-open');
+        menuToggle.addEventListener('click', () => {
+            menuNav.classList.toggle('is-open');
         });
 
-        /            e mo         menwhenng a link
+        // Close mobile menu when clicking a link
         menuNav.querySelectorAll('.menu-nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 menuNav.classList.remove('is-open');

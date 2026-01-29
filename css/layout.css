@@ -7,13 +7,47 @@
    WIDTH MODE TOGGLE (Column vs Full Width)
    ========================================================================== */
 
-/* Default: Column view (optimal reading width) */
+/* Default: Column view (flex container for pages) */
 .layout-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* Outer background visible only in column view */
+body:has(.layout-column) {
+    background-color: var(--color-background-outer);
+}
+
+/* Top/bottom margin on the container */
+body:has(.layout-column) .layout-column {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Page styling within column view */
+.layout-column .page {
     max-width: var(--content-width-medium);
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-left: var(--page-margin-x);
     padding-right: var(--page-margin-x);
+    background-color: var(--color-background);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.06);
+}
+
+/* No paper offset on mobile (pages fill viewport seamlessly) */
+@media (max-width: 640px) {
+    body:has(.layout-column) .layout-column {
+        margin-top: 0;
+        margin-bottom: 0;
+        gap: 0;
+    }
+
+    .layout-column .page {
+        box-shadow: none;
+    }
 }
 
 /* Full width mode */
@@ -23,6 +57,11 @@
     margin-right: auto;
     padding-left: var(--page-margin-x);
     padding-right: var(--page-margin-x);
+}
+
+/* Pages in full-width mode: no shadow, no special background, seamless */
+.layout-full .page {
+    max-width: 100%;
 }
 
 /* Constrained content within full-width sections */
