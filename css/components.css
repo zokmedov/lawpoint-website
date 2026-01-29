@@ -1,0 +1,460 @@
+/* ==========================================================================
+   LAWPOINT IMMIGRATION - COMPONENT STYLES
+   Menu, buttons, toggles, and interactive elements
+   ========================================================================== */
+
+/* ==========================================================================
+   MAIN NAVIGATION MENU
+   ========================================================================== */
+
+.main-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--menu-height);
+    background-color: var(--menu-background);
+    border-bottom: var(--menu-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--page-margin-x);
+}
+
+/* Logo area */
+.menu-logo {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.menu-logo:hover {
+    color: var(--color-link);
+}
+
+/* Logo image */
+.menu-logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+@media (max-width: 640px) {
+    .menu-logo-img {
+        height: 32px;
+    }
+}
+
+/* Navigation links container */
+.menu-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+/* Individual nav links */
+.menu-nav-link {
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid transparent;
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.menu-nav-link:hover,
+.menu-nav-link:focus {
+    color: var(--color-link);
+    border-color: var(--color-border);
+}
+
+.menu-nav-link.active {
+    color: var(--color-link);
+    border-color: var(--color-link);
+}
+
+/* CTA button in menu (e.g., "Consultation") */
+.menu-nav-link.menu-cta {
+    background-color: var(--color-button-primary-bg);
+    color: var(--color-button-primary-text);
+    border-color: var(--color-button-primary-bg);
+}
+
+.menu-nav-link.menu-cta:hover {
+    background-color: var(--color-button-primary-hover);
+    border-color: var(--color-button-primary-hover);
+    color: var(--color-button-primary-text);
+}
+
+/* Menu controls (toggles) */
+.menu-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+/* Mobile menu toggle button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    color: var(--color-text);
+}
+
+.menu-toggle-icon {
+    width: 24px;
+    height: 2px;
+    background-color: currentColor;
+    position: relative;
+    display: block;
+}
+
+.menu-toggle-icon::before,
+.menu-toggle-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+}
+
+.menu-toggle-icon::before {
+    top: -7px;
+}
+
+.menu-toggle-icon::after {
+    top: 7px;
+}
+
+/* Mobile menu styles */
+@media (max-width: 640px) {
+    .main-menu {
+        height: var(--menu-height-mobile);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-nav {
+        position: fixed;
+        top: var(--menu-height-mobile);
+        left: 0;
+        right: 0;
+        background-color: var(--menu-background);
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        gap: var(--spacing-sm);
+        border-bottom: var(--menu-border);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-base);
+    }
+
+    .menu-nav.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-nav-link {
+        width: 100%;
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+
+    .menu-controls {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+/* Base button styles */
+.btn {
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Primary button (filled) */
+.btn-primary {
+    background-color: var(--color-button-primary-bg);
+    color: var(--color-button-primary-text);
+    border-color: var(--color-button-primary-bg);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--color-button-primary-hover);
+    border-color: var(--color-button-primary-hover);
+    color: var(--color-button-primary-text);
+}
+
+/* Secondary button (outlined) */
+.btn-secondary {
+    background-color: var(--color-button-secondary-bg);
+    color: var(--color-button-secondary-text);
+    border-color: var(--color-button-secondary-border);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: var(--color-button-secondary-hover-bg);
+    color: var(--color-button-secondary-hover-text);
+}
+
+/* Ghost button (minimal) */
+.btn-ghost {
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: transparent;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus {
+    background-color: var(--color-accent-light);
+    border-color: var(--color-border);
+}
+
+/* Button sizes */
+.btn-sm {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.btn-lg {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-lg) var(--spacing-xl);
+}
+
+/* Full width button */
+.btn-block {
+    width: 100%;
+}
+
+/* ==========================================================================
+   BUTTON ROW (Horizontal arrangement)
+   ========================================================================== */
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.button-row-center {
+    justify-content: center;
+}
+
+.button-row-left {
+    justify-content: flex-start;
+}
+
+.button-row-right {
+    justify-content: flex-end;
+}
+
+/* Up to 5 buttons in a row on desktop */
+.button-row .btn {
+    flex: 0 1 auto;
+    min-width: 120px;
+}
+
+/* Stack buttons on mobile */
+@media (max-width: 640px) {
+    .button-row {
+        flex-direction: column;
+    }
+
+    .button-row .btn {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   ENHANCED LINK STYLES
+   ========================================================================== */
+
+/* Enhanced interactive links */
+a {
+    color: var(--color-link);
+    text-decoration: underline;
+    text-decoration-color: rgba(23, 54, 93, 0.3);
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 1px;
+    transition: all var(--transition-fast);
+}
+
+a:hover,
+a:focus {
+    color: var(--color-link-hover);
+    text-decoration-color: var(--color-link-hover);
+    text-decoration-thickness: 2px;
+}
+
+/* Links with background highlight on hover */
+a.link-highlight {
+    text-decoration: none;
+    padding: 0.1em 0.2em;
+    margin: -0.1em -0.2em;
+    border-radius: 2px;
+}
+
+a.link-highlight:hover,
+a.link-highlight:focus {
+    background-color: rgba(23, 54, 93, 0.1);
+    text-decoration: underline;
+}
+
+/* Remove link styling for certain elements */
+a.no-style {
+    color: inherit;
+    text-decoration: none;
+}
+
+a.no-style:hover {
+    color: inherit;
+}
+
+/* ==========================================================================
+   TOGGLE SWITCHES
+   ========================================================================== */
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-xs);
+}
+
+.toggle-label {
+    color: var(--color-text-secondary);
+    cursor: pointer;
+}
+
+.toggle-label.active {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background-color: var(--color-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.toggle-switch.active {
+    background-color: var(--color-button-primary-bg);
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-background-pure);
+    border-radius: 50%;
+    transition: transform var(--transition-fast);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch.active::after {
+    transform: translateX(20px);
+}
+
+/* ==========================================================================
+   WIDTH TOGGLE BUTTON
+   ========================================================================== */
+
+.width-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.width-toggle:hover {
+    border-color: var(--color-text);
+    color: var(--color-text);
+}
+
+.width-toggle-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* ==========================================================================
+   FONT TOGGLE BUTTON
+   ========================================================================== */
+
+.font-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.font-toggle:hover {
+    border-color: var(--color-text);
+    color: var(--color-text);
+}
+
+.font-toggle .serif-label {
+    font-family: var(--font-family-serif);
+}
+
+.font-toggle .sans-label {
+    font-family: var(--font-family-sans);
+}

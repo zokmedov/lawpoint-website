@@ -1,0 +1,329 @@
+/* ==========================================================================
+   LAWPOINT IMMIGRATION - TYPOGRAPHY STYLES
+   Legal document styles adapted for web
+   ========================================================================== */
+
+/* ==========================================================================
+   BASE RESET & DEFAULTS
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    /* Base for rem calculations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-base);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================================
+   (NORMAL) - Standard Body Text
+   Word: Times New Roman 12pt, 1.5 line spacing, 7pt after
+   ========================================================================== */
+
+.text-normal,
+p {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-base);
+    color: var(--color-text);
+    margin-top: 0;
+    margin-bottom: var(--spacing-paragraph);
+}
+
+/* ==========================================================================
+   (SECTION) - Section Headers
+   Word: Bold, ALL CAPS, Underlined, 12pt before/after
+   ========================================================================== */
+
+.text-section {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    color: var(--color-text);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* First section shouldn't have top margin */
+.text-section:first-child {
+    margin-top: 0;
+}
+
+/* ==========================================================================
+   (SUBSECTION) - Subsection Headers
+   Word: Bold, 12pt, left indent
+   ========================================================================== */
+
+.text-subsection {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--indent-standard);
+}
+
+/* ==========================================================================
+   (NUMBERED) - Numbered Paragraphs
+   Word: 12pt, left indent 794 twips, numbered list
+   ========================================================================== */
+
+.text-numbered {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-base);
+    color: var(--color-text);
+    margin-top: 0;
+    margin-bottom: var(--spacing-paragraph);
+    padding-left: var(--indent-standard);
+}
+
+/* Numbered list container */
+ol.numbered-list {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin: 0;
+    padding-left: var(--indent-standard);
+    counter-reset: item;
+}
+
+ol.numbered-list>li {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    margin-bottom: var(--spacing-paragraph);
+    padding-left: 0.5rem;
+}
+
+/* ==========================================================================
+   (OFFSET) - Offset Paragraphs (same indent as numbered, no number)
+   Word: 12pt, left indent 794 twips
+   ========================================================================== */
+
+.text-offset {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-base);
+    color: var(--color-text);
+    margin-top: 0;
+    margin-bottom: var(--spacing-paragraph);
+    /* Aligns with text after numbered list numbers */
+    padding-left: calc(var(--indent-standard) + 0.5rem);
+}
+
+/* ==========================================================================
+   (REFERENCE) - Citations and References
+   Word: Bold, 10pt, right-aligned, left indent
+   ========================================================================== */
+
+.text-reference {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-reference);
+    color: var(--color-text);
+    text-align: right;
+    margin-top: 0;
+    margin-bottom: var(--spacing-paragraph);
+    padding-left: var(--indent-deep);
+}
+
+/* ==========================================================================
+   (LIST) - Unnumbered Bullet Lists
+   Word: 12pt, standard bullet
+   ========================================================================== */
+
+ul.bullet-list,
+.text-list {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--color-text);
+    list-style-type: none;
+    margin: 0;
+    margin-bottom: var(--spacing-paragraph);
+    padding-left: var(--indent-standard);
+}
+
+ul.bullet-list>li {
+    position: relative;
+    margin-bottom: calc(var(--spacing-paragraph) / 2);
+    padding-left: 1.5rem;
+}
+
+/* Em dash bullet */
+ul.bullet-list>li::before {
+    content: "\2014";
+    position: absolute;
+    left: 0;
+    color: var(--color-text);
+}
+
+/* ==========================================================================
+   (LAW) - Law Citations
+   Word: Italic, color #17365D (dark blue), deep left indent
+   ========================================================================== */
+
+.text-law {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    font-style: italic;
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-base);
+    color: var(--color-law);
+    margin-top: 0;
+    margin-bottom: var(--spacing-paragraph);
+    padding-left: var(--indent-deep);
+}
+
+/* Block quote style for law citations */
+blockquote.law-citation {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    font-style: italic;
+    line-height: var(--line-height-base);
+    color: var(--color-law);
+    margin: 0;
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--indent-deep);
+    border-left: 3px solid var(--color-law);
+}
+
+/* ==========================================================================
+   (QUOTE) - Quotes from Other Sources
+   Word: Italic, color #632423 (dark red/maroon), deep left indent
+   ========================================================================== */
+
+.text-quote {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    font-style: italic;
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-base);
+    color: var(--color-quote);
+    margin-top: 0;
+    margin-bottom: var(--spacing-paragraph);
+    padding-left: var(--indent-deep);
+}
+
+/* Block quote style for general citations */
+blockquote.quote-citation {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    font-style: italic;
+    line-height: var(--line-height-base);
+    color: var(--color-quote);
+    margin: 0;
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--indent-deep);
+    border-left: 3px solid var(--color-quote);
+}
+
+/* ==========================================================================
+   ADDITIONAL TYPOGRAPHY UTILITIES
+   ========================================================================== */
+
+/* Links */
+a {
+    color: var(--color-link);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    transition: color var(--transition-fast);
+}
+
+a:hover,
+a:focus {
+    color: var(--color-link-hover);
+}
+
+/* Strong/Bold */
+strong,
+b {
+    font-weight: var(--font-weight-bold);
+}
+
+/* Emphasis/Italic */
+em,
+i {
+    font-style: italic;
+}
+
+/* Horizontal Rule - Simple dividing line */
+hr {
+    border: none;
+    border-top: var(--border);
+    margin: var(--spacing-xl) 0;
+}
+
+hr.thick {
+    border-top-width: var(--border-width-thick);
+}
+
+/* ==========================================================================
+   PAGE-LEVEL HEADINGS (for website sections)
+   ========================================================================== */
+
+h1 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text);
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text);
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+h3 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+h4 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}

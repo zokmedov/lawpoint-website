@@ -1,0 +1,40 @@
+I need to create a website for a Canadian immigration law firm. The concept is as follows:
+
+1. The website is typography-focused, with very little use of images (mostly a logo and necessary illustrations inside the content pages).
+2. Website visual style must be closely based on my legal documents visual style, which is defined as styles in an MS Word document.
+3. Background will be white or off-white, text will be black or dark, to create overall resemblance of text printed on paper.
+4. Graphic elements will be minimal and include simple dividing lines, borders around menu items etc.
+5. Website will have the following structure:
+  a) scrollable home page (main menu, hero section, several generic text-based sections, section with links to content pages, contact form, footer);
+  b) content pages that will all be based on a single template;
+  c) about / contacts page;
+  d) consultation scheduling page;
+  e) payment processing pages (checkout page);
+  f) simple generic notification template (for 404 pages, confirmation messages etc.)
+  
+The visual style must be based on the legal document, but may need to be adapted for web readability in terms of font size etc. on different screens sizes.
+Main properties (such as main colors, serif/sans serif, font size, line interval etc.) are to be declared as CSS variables where possible for ease of fine-tuning in the future.
+
+Reference files:
+
+/source/Memorandum.docx - the reference document, contains pre-defined styles
+/source/Memorandum.pdf - same reference document in PDF format for visual reference
+
+The following styles are to be used:
+
+(normal) - for normal text
+(numbered) - for numbered paragraphs
+(offset) - for unnumbered paragraphs with same left offset as numbered paragraphs
+(reference) - for citations and references
+(list) - for unnumbered bullet lists
+(section) - for section headers
+(subsection) - for subsection headers
+(law) - for citing from law
+(quote) - for citing from other sources
+
+We won't need any other styles present in Memorandum.docx.
+See the PDF version of the same document for overall look and feel.
+
+Create a CSS Design System — translate Word styles into CSS variables and classes, adapting font sizes for web readability.
+Build a Style Preview Page — A simple HTML page showing all typography styles to review and fine-tune before we build the full website.
+Develop the Website Structure — Once styles are approved, build out the page templates (home, content, contacts, scheduling, checkout, notification).

@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"e:\\\\GVV Projects\\\\lawpoint-typography-website\" /s /b)"
+    ]
+  }
+}

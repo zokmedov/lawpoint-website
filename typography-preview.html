@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lawpoint Immigration - Typography Preview</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <style>
+    /* Preview page specific styles */
+    .preview-container {
+      max-width: var(--content-width-medium);
+      margin: 0 auto;
+      padding: var(--page-margin-y) var(--page-margin-x);
+    }
+
+    .preview-header {
+      text-align: center;
+      padding-bottom: var(--spacing-2xl);
+      border-bottom: var(--border-width-thick) solid var(--color-text);
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .preview-header h1 {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .preview-header p {
+      color: var(--color-text-secondary);
+      font-style: italic;
+    }
+
+    .style-demo {
+      margin-bottom: var(--spacing-3xl);
+      padding-bottom: var(--spacing-xl);
+      border-bottom: var(--border);
+    }
+
+    .style-demo:last-child {
+      border-bottom: none;
+    }
+
+    .style-label {
+      display: inline-block;
+      font-family: var(--font-family-ui);
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-background);
+      background-color: var(--color-text);
+      padding: var(--spacing-xs) var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .style-description {
+      font-family: var(--font-family-ui);
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-lg);
+      padding-left: var(--spacing-md);
+      border-left: 2px solid var(--color-border);
+    }
+
+    .demo-box {
+      background-color: var(--color-background-pure);
+      border: var(--border);
+      padding: var(--spacing-lg);
+    }
+
+    /* Color swatches */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .color-swatch {
+      border: var(--border);
+    }
+
+    .color-swatch-preview {
+      height: 60px;
+    }
+
+    .color-swatch-info {
+      padding: var(--spacing-sm);
+      font-family: var(--font-family-ui);
+      font-size: var(--font-size-xs);
+    }
+
+    .color-swatch-name {
+      font-weight: var(--font-weight-bold);
+    }
+
+    .color-swatch-value {
+      color: var(--color-text-secondary);
+    }
+
+    /* Spacing demo */
+    .spacing-demo {
+      display: flex;
+      align-items: flex-end;
+      gap: var(--spacing-md);
+      flex-wrap: wrap;
+    }
+
+    .spacing-box {
+      background-color: var(--color-law);
+      opacity: 0.3;
+    }
+
+    .spacing-label {
+      font-family: var(--font-family-ui);
+      font-size: var(--font-size-xs);
+      text-align: center;
+      margin-top: var(--spacing-xs);
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-container">
+    
+    <!-- Header -->
+    <header class="preview-header">
+      <h1>Lawpoint Immigration</h1>
+      <p>Typography Design System Preview</p>
+    </header>
+
+    <!-- COLOR PALETTE -->
+    <section class="style-demo">
+      <span class="style-label">Color Palette</span>
+      <p class="style-description">
+        Colors derived from legal document styling. Paper-like backgrounds with dark text for readability.
+      </p>
+      
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="color-swatch-preview" style="background-color: #FDFCFA;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Background</div>
+            <div class="color-swatch-value">#FDFCFA</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-preview" style="background-color: #1A1A1A;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Text</div>
+            <div class="color-swatch-value">#1A1A1A</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-preview" style="background-color: #17365D;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Law Citation</div>
+            <div class="color-swatch-value">#17365D</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-preview" style="background-color: #632423;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Quote Citation</div>
+            <div class="color-swatch-value">#632423</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-preview" style="background-color: #D4D4D4;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Border</div>
+            <div class="color-swatch-value">#D4D4D4</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-preview" style="background-color: #595959;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Secondary Text</div>
+            <div class="color-swatch-value">#595959</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- (NORMAL) -->
+    <section class="style-demo">
+      <span class="style-label">(normal)</span>
+      <p class="style-description">
+        Standard body text. Times New Roman, 18px, 1.7 line height. Used for general content paragraphs.
+      </p>
+      
+      <div class="demo-box">
+        <p class="text-normal">
+          This is an example of normal body text as it would appear on the Lawpoint Immigration website. 
+          The typography is designed to evoke the feeling of a professional legal document while remaining 
+          highly readable on screen. Notice the generous line height and comfortable reading width.
+        </p>
+        <p class="text-normal">
+          Canadian immigration law requires careful attention to detail in all applications. Whether you 
+          are applying for permanent residence, a work permit, or seeking refugee protection, proper 
+          documentation and legal guidance are essential to your success.
+        </p>
+      </div>
+    </section>
+
+    <!-- (SECTION) -->
+    <section class="style-demo">
+      <span class="style-label">(section)</span>
+      <p class="style-description">
+        Section headers. Bold, uppercase, underlined. Creates clear visual hierarchy for document sections.
+      </p>
+      
+      <div class="demo-box">
+        <h2 class="text-section">Statement of Facts</h2>
+        <p class="text-normal">Content would follow the section header...</p>
+        
+        <h2 class="text-section">Issues to Be Determined</h2>
+        <p class="text-normal">Content would follow the section header...</p>
+        
+        <h2 class="text-section">Legal Analysis and Submissions</h2>
+        <p class="text-normal">Content would follow the section header...</p>
+      </div>
+    </section>
+
+    <!-- (SUBSECTION) -->
+    <section class="style-demo">
+      <span class="style-label">(subsection)</span>
+      <p class="style-description">
+        Subsection headers. Bold, indented. Used for secondary headings within a section.
+      </p>
+      
+      <div class="demo-box">
+        <h2 class="text-section">Legal Framework</h2>
+        <h3 class="text-subsection">Relevant Statutory Provisions</h3>
+        <p class="text-normal">Discussion of applicable laws...</p>
+        
+        <h3 class="text-subsection">Applicable Jurisprudence</h3>
+        <p class="text-normal">Discussion of relevant case law...</p>
+      </div>
+    </section>
+
+    <!-- (NUMBERED) -->
+    <section class="style-demo">
+      <span class="style-label">(numbered)</span>
+      <p class="style-description">
+        Numbered paragraphs. Standard indentation with decimal numbering. Primary format for legal arguments.
+      </p>
+      
+      <div class="demo-box">
+        <ol class="numbered-list">
+          <li>The Applicant is a citizen of Country X who entered Canada on January 15, 2024, seeking refugee protection pursuant to section 96 and subsection 97(1) of the Immigration and Refugee Protection Act.</li>
+          <li>Upon arrival, the Applicant made a claim alleging persecution on the basis of political opinion.</li>
+          <li>The Applicant's claim was referred to the Refugee Protection Division for determination.</li>
+          <li>The hearing was held on March 20, 2024, and the Applicant testified with the assistance of an interpreter.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- (OFFSET) -->
+    <section class="style-demo">
+      <span class="style-label">(offset)</span>
+      <p class="style-description">
+        Offset paragraphs. Same indentation as numbered paragraphs but without numbers. For continuation text.
+      </p>
+      
+      <div class="demo-box">
+        <ol class="numbered-list">
+          <li>The Applicant submits that the Refugee Protection Division erred in its assessment of credibility.</li>
+        </ol>
+        <p class="text-offset">
+          Specifically, the panel failed to consider corroborating documentary evidence that was submitted 
+          in support of the claim. This evidence included medical reports, witness statements, and 
+          country condition documentation.
+        </p>
+        <p class="text-offset">
+          Furthermore, the panel applied an unreasonably high standard when evaluating the 
+          Applicant's testimony regarding peripheral details.
+        </p>
+      </div>
+    </section>
+
+    <!-- (LIST) -->
+    <section class="style-demo">
+      <span class="style-label">(list)</span>
+      <p class="style-description">
+        Bullet lists. Unnumbered lists for enumerating items without implied sequence.
+      </p>
+      
+      <div class="demo-box">
+        <p class="text-normal">The following documents are required for your application:</p>
+        <ul class="bullet-list">
+          <li>Valid passport or travel document</li>
+          <li>Completed application forms</li>
+          <li>Proof of identity (birth certificate, national ID)</li>
+          <li>Police clearance certificates</li>
+          <li>Medical examination results</li>
+          <li>Proof of funds</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- (REFERENCE) -->
+    <section class="style-demo">
+      <span class="style-label">(reference)</span>
+      <p class="style-description">
+        References and citations. Bold, smaller text, right-aligned. Used after quotations to cite sources.
+      </p>
+      
+      <div class="demo-box">
+        <blockquote class="law-citation">
+          A person in Canada who makes a claim for refugee protection must be examined by an officer, and if found eligible, the claim is referred to the Refugee Protection Division.
+        </blockquote>
+        <p class="text-reference">Immigration and Refugee Protection Act, S.C. 2001, c. 27, s. 100(1)</p>
+        
+        <blockquote class="quote-citation">
+          "The standard of review for questions of fact, including credibility findings, is reasonableness."
+        </blockquote>
+        <p class="text-reference">Canada (Minister of Citizenship and Immigration) v. Vavilov, 2019 SCC 65 at para 99</p>
+      </div>
+    </section>
+
+    <!-- (LAW) -->
+    <section class="style-demo">
+      <span class="style-label">(law)</span>
+      <p class="style-description">
+        Law citations. Italic, dark blue color (#17365D), deep indentation. For quoting statutory provisions.
+      </p>
+      
+      <div class="demo-box">
+        <p class="text-normal">Section 96 of the Immigration and Refugee Protection Act states:</p>
+        <p class="text-law">
+          A Convention refugee is a person who, by reason of a well-founded fear of persecution 
+          for reasons of race, religion, nationality, membership in a particular social group or 
+          political opinion,
+        </p>
+        <p class="text-law">
+          (a) is outside each of their countries of nationality and is unable or, by reason of 
+          that fear, unwilling to avail themself of the protection of each of those countries; or
+        </p>
+        <p class="text-law">
+          (b) not having a country of nationality, is outside the country of their former habitual 
+          residence and is unable or, by reason of that fear, unwilling to return to that country.
+        </p>
+        
+        <p class="text-normal" style="margin-top: var(--spacing-lg);">Alternative block quote format:</p>
+        <blockquote class="law-citation">
+          A Convention refugee is a person who, by reason of a well-founded fear of persecution 
+          for reasons of race, religion, nationality, membership in a particular social group or 
+          political opinion, is outside each of their countries of nationality and is unable or, 
+          by reason of that fear, unwilling to avail themself of the protection of each of those countries.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- (QUOTE) -->
+    <section class="style-demo">
+      <span class="style-label">(quote)</span>
+      <p class="style-description">
+        Quote citations. Italic, dark red/maroon color (#632423), deep indentation. For quoting from case law and other sources.
+      </p>
+      
+      <div class="demo-box">
+        <p class="text-normal">The Supreme Court of Canada has held:</p>
+        <p class="text-quote">
+          "A reviewing court must be satisfied that there are sufficiently serious shortcomings 
+          in the decision such that it cannot be said to exhibit the requisite degree of 
+          justification, intelligibility and transparency."
+        </p>
+        <p class="text-reference">Canada (Minister of Citizenship and Immigration) v. Vavilov, 2019 SCC 65 at para 100</p>
+        
+        <p class="text-normal" style="margin-top: var(--spacing-lg);">Alternative block quote format:</p>
+        <blockquote class="quote-citation">
+          "A reviewing court must be satisfied that there are sufficiently serious shortcomings 
+          in the decision such that it cannot be said to exhibit the requisite degree of 
+          justification, intelligibility and transparency."
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- PAGE HEADINGS -->
+    <section class="style-demo">
+      <span class="style-label">Page Headings (Website)</span>
+      <p class="style-description">
+        Standard HTML headings for website page structure. Larger sizes than document styles.
+      </p>
+      
+      <div class="demo-box">
+        <h1>Heading Level 1 (36px)</h1>
+        <h2>Heading Level 2 (28px)</h2>
+        <h3>Heading Level 3 (22px)</h3>
+        <h4>Heading Level 4 (18px)</h4>
+      </div>
+    </section>
+
+    <!-- LINKS -->
+    <section class="style-demo">
+      <span class="style-label">Links</span>
+      <p class="style-description">
+        Hyperlinks styled in the law citation color for consistency.
+      </p>
+      
+      <div class="demo-box">
+        <p class="text-normal">
+          For more information, please visit the 
+          <a href="#">Immigration, Refugees and Citizenship Canada</a> website or 
+          <a href="#">contact our office</a> to schedule a consultation.
+        </p>
+      </div>
+    </section>
+
+    <!-- DIVIDERS -->
+    <section class="style-demo">
+      <span class="style-label">Dividing Lines</span>
+      <p class="style-description">
+        Simple horizontal rules for visual separation of content sections.
+      </p>
+      
+      <div class="demo-box">
+        <p class="text-normal">Content above the divider.</p>
+        <hr>
+        <p class="text-normal">Content below a standard divider.</p>
+        <hr class="thick">
+        <p class="text-normal">Content below a thick divider.</p>
+      </div>
+    </section>
+
+    <!-- COMBINED EXAMPLE -->
+    <section class="style-demo">
+      <span class="style-label">Combined Example</span>
+      <p class="style-description">
+        A realistic example showing multiple styles used together as they would appear in actual content.
+      </p>
+      
+      <div class="demo-box">
+        <h2 class="text-section">The Applicant Meets the Definition of Convention Refugee</h2>
+        
+        <h3 class="text-subsection">Legal Framework</h3>
+        
+        <ol class="numbered-list">
+          <li>
+            Section 96 of the Immigration and Refugee Protection Act provides the definition 
+            of a Convention refugee:
+          </li>
+        </ol>
+        
+        <blockquote class="law-citation">
+          A Convention refugee is a person who, by reason of a well-founded fear of persecution 
+          for reasons of race, religion, nationality, membership in a particular social group or 
+          political opinion, is outside each of their countries of nationality and is unable or, 
+          by reason of that fear, unwilling to avail themself of the protection of each of those countries.
+        </blockquote>
+        <p class="text-reference">Immigration and Refugee Protection Act, S.C. 2001, c. 27, s. 96</p>
+        
+        <ol class="numbered-list" start="2">
+          <li>The Supreme Court of Canada has established that the standard of review for 
+          credibility findings is reasonableness:</li>
+        </ol>
+        
+        <blockquote class="quote-citation">
+          "The burden is on the party challenging the decision to show that it is unreasonable. 
+          Before a decision can be set aside on this basis, the reviewing court must be satisfied 
+          that there are sufficiently serious shortcomings in the decision."
+        </blockquote>
+        <p class="text-reference">Canada (Minister of Citizenship and Immigration) v. Vavilov, 2019 SCC 65 at para 100</p>
+        
+        <h3 class="text-subsection">Application to the Present Case</h3>
+        
+        <ol class="numbered-list" start="3">
+          <li>In the present case, the Applicant has established a well-founded fear of 
+          persecution based on the following evidence:</li>
+        </ol>
+        
+        <ul class="bullet-list">
+          <li>Documentary evidence of political involvement</li>
+          <li>Medical reports confirming injuries consistent with the alleged mistreatment</li>
+          <li>Country condition documentation showing a pattern of persecution</li>
+          <li>Witness statements corroborating key aspects of the claim</li>
+        </ul>
+        
+        <p class="text-offset">
+          The totality of this evidence demonstrates that the Applicant faces a serious 
+          possibility of persecution if returned to their country of origin.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: var(--spacing-2xl) 0; border-top: var(--border-width-thick) solid var(--color-text); margin-top: var(--spacing-3xl);">
+      <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+        Lawpoint Immigration — Typography Design System v1.0
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>

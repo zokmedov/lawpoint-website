@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Lawpoint Immigration</title>
+
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body class="font-serif">
+
+    <!-- MAIN MENU -->
+    <nav class="main-menu">
+        <a href="index.html" class="menu-logo">
+            <img src="images/logo.svg" alt="Lawpoint Immigration" class="menu-logo-img">
+        </a>
+
+        <div class="menu-nav" id="menuNav">
+            <a href="about.html" class="menu-nav-link active">About</a>
+            <a href="index.html#services" class="menu-nav-link">Services</a>
+            <a href="index.html#contacts" class="menu-nav-link">Contacts</a>
+            <a href="index.html#navigation" class="menu-nav-link">Navigation</a>
+            <a href="consultation.html" class="menu-nav-link menu-cta">Consultation</a>
+        </div>
+
+        <div class="menu-controls">
+            <button class="font-toggle" id="fontToggle" title="Toggle font style">
+                <span class="serif-label">Aa</span> / <span class="sans-label">Aa</span>
+            </button>
+            <button class="width-toggle" id="widthToggle" title="Toggle content width">
+                <svg class="width-toggle-icon" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M2 4h12v1H2V4zm0 3h12v1H2V7zm0 3h8v1H2v-1z" />
+                </svg>
+                Column
+            </button>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span class="menu-toggle-icon"></span>
+        </button>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content layout-column" id="mainContent">
+
+        <section class="section">
+            <h1 class="text-center">About Lawpoint Immigration</h1>
+            <hr>
+
+            <div class="content-body">
+                <p class="text-normal">
+                    Lawpoint Immigration is a premier boutique law firm based in Toronto, Canada. We specialize
+                    exclusively in Canadian immigration, refugee, and citizenship law.
+                </p>
+
+                <h2 class="text-section">Our Philosophy</h2>
+                <p class="text-normal">
+                    We believe that legal representation should be clear, accessible, and precise. Just as typography
+                    requires attention to the smallest detail to create a harmonious whole, we approach every legal case
+                    with meticulous care.
+                </p>
+                <blockquote class="quote-citation">
+                    "Excellence is not an act, but a habit. We strive for excellence in every application, submission,
+                    and client interaction."
+                </blockquote>
+
+                <h2 class="text-section">Our Team</h2>
+                <p class="text-normal">
+                    Our team consists of experienced lawyers and legal professionals who are passionate about helping
+                    individuals and businesses achieve their immigration goals.
+                </p>
+
+                <h3 class="text-subsection">Lead Counsel</h3>
+                <p class="text-normal">
+                    With over 15 years of experience before the Immigration and Refugee Board and the Federal Court, our
+                    lead counsel brings a wealth of knowledge and a track record of success to every file.
+                </p>
+
+                <h2 class="text-section">Why Choose Us?</h2>
+                <ol class="numbered-list">
+                    <li><strong>Expertise:</strong> We focus solely on immigration law, staying current with the latest
+                        policy changes and case law.</li>
+                    <li><strong>Transparency:</strong> We provide clear, flat-fee pricing and honest assessments of your
+                        case's prospects.</li>
+                    <li><strong>Dedication:</strong> We treat your application as if it were our own, with a commitment
+                        to responsiveness and support.</li>
+                </ol>
+
+                <div class="button-row button-row-center" style="margin-top: var(--spacing-2xl);">
+                    <a href="consultation.html" class="btn btn-primary btn-lg">Schedule a Consultation</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer
+            style="text-align: center; padding: var(--spacing-2xl) 0; border-top: var(--border-width-thick) solid var(--color-text); margin-top: var(--spacing-3xl);">
+            <div style="margin-bottom: var(--spacing-lg);">
+                <img src="images/logo.svg" alt="Lawpoint Immigration" style="height: 32px; width: auto;">
+            </div>
+            <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+                &copy; 2024 Lawpoint Immigration. All rights reserved.
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        const fontToggle = document.getElementById('fontToggle');
+        const body = document.body;
+        fontToggle.addEventListener('click', () => {
+            if (body.classList.contains('font-serif')) {
+                body.classList.remove('font-serif');
+                body.classList.add('font-sans');
+            } else {
+                body.classList.remove('font-sans');
+                body.classList.add('font-serif');
+            }
+        });
+
+        const widthToggle = document.getElementById('widthToggle');
+        const mainContent = document.getElementById('mainContent');
+        widthToggle.addEventListener('click', () => {
+            if (mainContent.classList.contains('layout-column')) {
+                mainContent.classList.remove('layout-column');
+                mainContent.classList.add('layout-full');
+                widthToggle.innerHTML = `<svg class="width-toggle-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M2 4h12v1H2V4zm0 3h12v1H2V7zm0 3h12v1H2v-1z"/></svg> Full`;
+            } else {
+                mainContent.classList.remove('layout-full');
+                mainContent.classList.add('layout-column');
+                widthToggle.innerHTML = `<svg class="width-toggle-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M2 4h12v1H2V4zm0 3h8v1H2v-1z"/></svg> Column`;
+            }
+        });
+
+        const menuToggle = document.getElementById('menuToggle');
+        const menuNav = document.getElementById('menuNav');
+        menuToggle.addEventListener('click', () => {
+            menuNav.classList.toggle('is-open');
+        });
+
+        menuNav.querySelectorAll('.menu-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuNav.classList.remove('is-open');
+            });
+        });
+    </script>
+</body>
+
+</html>

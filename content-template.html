@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title - Lawpoint Immigration</title>
+
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body class="font-serif">
+
+    <!-- MAIN MENU -->
+    <nav class="main-menu">
+        <a href="index.html" class="menu-logo">
+            <img src="images/logo.svg" alt="Lawpoint Immigration" class="menu-logo-img">
+        </a>
+
+        <div class="menu-nav" id="menuNav">
+            <a href="index.html#about" class="menu-nav-link">About</a>
+            <a href="index.html#services" class="menu-nav-link">Services</a>
+            <a href="index.html#contacts" class="menu-nav-link">Contacts</a>
+            <a href="index.html#navigation" class="menu-nav-link">Navigation</a>
+            <a href="consultation.html" class="menu-nav-link menu-cta">Consultation</a>
+        </div>
+
+        <div class="menu-controls">
+            <button class="font-toggle" id="fontToggle" title="Toggle font style">
+                <span class="serif-label">Aa</span> / <span class="sans-label">Aa</span>
+            </button>
+            <button class="width-toggle" id="widthToggle" title="Toggle content width">
+                <svg class="width-toggle-icon" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M2 4h12v1H2V4zm0 3h12v1H2V7zm0 3h8v1H2v-1z" />
+                </svg>
+                Column
+            </button>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span class="menu-toggle-icon"></span>
+        </button>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content layout-column" id="mainContent">
+
+        <section class="section">
+            <!-- Title Block -->
+            <h1 class="text-center">Page Title</h1>
+            <hr>
+
+            <!-- Content Block -->
+            <div class="content-body">
+                <p class="text-normal">
+                    This is a template for content pages. The text here demonstrates the standard typography
+                    used throughout the website.
+                </p>
+
+                <h2 class="text-section">Section Header</h2>
+                <p class="text-normal">
+                    Content continues here with standard formatting.
+                </p>
+
+                <h3 class="text-subsection">Subsection Header</h3>
+                <ul class="bullet-list">
+                    <li>List item one</li>
+                    <li>List item two</li>
+                    <li>List item three</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer
+            style="text-align: center; padding: var(--spacing-2xl) 0; border-top: var(--border-width-thick) solid var(--color-text); margin-top: var(--spacing-3xl);">
+            <div style="margin-bottom: var(--spacing-lg);">
+                <img src="images/logo.svg" alt="Lawpoint Immigration" style="height: 32px; width: auto;">
+            </div>
+            <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+                &copy; 2024 Lawpoint Immigration. All rights reserved.
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        const fontToggle = document.getElementById('fontToggle');
+        const body = document.body;
+        fontToggle.addEventListener('click', () => {
+            if (body.classList.contains('font-serif')) {
+                body.classList.remove('font-serif');
+                body.classList.add('font-sans');
+            } else {
+                body.classList.remove('font-sans');
+                body.classList.add('font-serif');
+            }
+        });
+
+        const widthToggle = document.getElementById('widthToggle');
+        const mainContent = document.getElementById('mainContent');
+        widthToggle.addEventListener('click', () => {
+            if (mainContent.classList.contains('layout-column')) {
+                mainContent.classList.remove('layout-column');
+                mainContent.classList.add('layout-full');
+                widthToggle.innerHTML = `<svg class="width-toggle-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M2 4h12v1H2V4zm0 3h12v1H2V7zm0 3h12v1H2v-1z"/></svg> Full`;
+            } else {
+                mainContent.classList.remove('layout-full');
+                mainContent.classList.add('layout-column');
+                widthToggle.innerHTML = `<svg class="width-toggle-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M2 4h12v1H2V4zm0 3h8v1H2v-1z"/></svg> Column`;
+            }
+        });
+
+        const menuToggle = document.getElementById('menuToggle');
+        const menuNav = document.getElementById('menuNav');
+        menuToggle.addEventListener('click', () => {
+            menuNav.classList.toggle('is-open');
+        });
+
+        // Close menu when clicking links
+        menuNav.querySelectorAll('.menu-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuNav.classList.remove('is-open');
+            });
+        });
+    </script>
+</body>
+
+</html>

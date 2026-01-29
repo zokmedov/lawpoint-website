@@ -1,0 +1,203 @@
+/* ==========================================================================
+   LAWPOINT IMMIGRATION - CSS DESIGN SYSTEM
+   Based on legal document typography
+   ========================================================================== */
+
+:root {
+   /* ==========================================================================
+     COLORS
+     ========================================================================== */
+
+   /* Primary Colors - Paper-like appearance */
+   --color-background: #FCFCFC;
+   /* Neutral off-white, paper-like */
+   --color-background-pure: #FFFFFF;
+   /* Pure white for cards/overlays */
+   --color-text: #1A1A1A;
+   /* Near-black, softer than pure black */
+   --color-text-secondary: #4A4A4A;
+   /* Secondary text, slightly lighter */
+
+   /* Accent Colors - From legal document styles */
+   --color-law: #17365D;
+   /* Dark blue for law citations */
+   --color-quote: #632423;
+   /* Dark red/maroon for quotes */
+   --color-link: #17365D;
+   /* Links match law citation color */
+   --color-link-hover: #0D2240;
+   /* Darker on hover */
+
+   /* UI Colors */
+   --color-border: #D4D4D4;
+   /* Light gray for borders */
+   --color-border-dark: #A6A6A6;
+   /* Darker border (from table styles) */
+   --color-accent-light: #F5F4F2;
+   /* Light background accent */
+   --color-signature: #595959;
+   /* Gray for signatures/comments */
+
+   /* ==========================================================================
+     TYPOGRAPHY - FONTS
+     ========================================================================== */
+
+   /* Font Families */
+   --font-family-serif: "Times New Roman", Times, Georgia, serif;
+   --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+   --font-family-heading: var(--font-family-serif);
+   --font-family-body: var(--font-family-serif);
+   --font-family-ui: "Inter", Arial, sans-serif;
+   /* For tables/UI/menu elements */
+
+   /* ==========================================================================
+     BUTTON COLORS
+     ========================================================================== */
+
+   /* Primary button (uses the law/link blue as accent) */
+   --color-button-primary-bg: #17365D;
+   --color-button-primary-text: #FFFFFF;
+   --color-button-primary-hover: #0D2240;
+
+   /* Secondary button (outlined style) */
+   --color-button-secondary-bg: transparent;
+   --color-button-secondary-text: #17365D;
+   --color-button-secondary-border: #17365D;
+   --color-button-secondary-hover-bg: #17365D;
+   --color-button-secondary-hover-text: #FFFFFF;
+
+   /* ==========================================================================
+     MENU & NAVIGATION
+     ========================================================================== */
+
+   --menu-height: 4rem;
+   /* 64px */
+   --menu-height-mobile: 3.5rem;
+   /* 56px */
+   --menu-background: var(--color-background-pure);
+   --menu-border: var(--border);
+
+   /* ==========================================================================
+     RESPONSIVE BREAKPOINTS
+     ========================================================================== */
+
+   /* These are used as reference; actual breakpoints in @media queries */
+   /* Mobile: 0 - 640px */
+   /* Tablet: 641px - 1024px */
+   /* Desktop: 1025px+ */
+
+   /* ==========================================================================
+     TYPOGRAPHY - SIZES
+     ========================================================================== */
+
+   /* Base Size (12pt Word → 18px web for readability) */
+   --font-size-base: 1.125rem;
+   /* 18px - main body text */
+   --font-size-sm: 1rem;
+   /* 16px - smaller text, references */
+   --font-size-xs: 0.875rem;
+   /* 14px - captions, footnotes */
+   --font-size-lg: 1.25rem;
+   /* 20px - slightly larger text */
+
+   /* Heading Sizes */
+   --font-size-h1: 2.25rem;
+   /* 36px - page titles */
+   --font-size-h2: 1.75rem;
+   /* 28px - major sections */
+   --font-size-h3: 1.375rem;
+   /* 22px - subsections */
+   --font-size-h4: 1.125rem;
+   /* 18px - minor headings */
+
+   /* ==========================================================================
+     TYPOGRAPHY - LINE HEIGHTS
+     ========================================================================== */
+
+   /* Line Heights (1.5 spacing from Word, slightly increased for web) */
+   --line-height-tight: 1.3;
+   /* For headings */
+   --line-height-base: 1.7;
+   /* Body text (Word 1.5 → web 1.7) */
+   --line-height-relaxed: 1.8;
+   /* More spacious reading */
+   --line-height-reference: 1.5;
+   /* References/citations */
+
+   /* ==========================================================================
+     TYPOGRAPHY - FONT WEIGHTS
+     ========================================================================== */
+
+   --font-weight-normal: 400;
+   --font-weight-bold: 700;
+
+   /* ==========================================================================
+     SPACING
+     ========================================================================== */
+
+   /* Base spacing unit */
+   --spacing-unit: 0.5rem;
+   /* 8px */
+
+   /* Spacing scale */
+   --spacing-xs: calc(var(--spacing-unit) * 0.5);
+   /* 4px */
+   --spacing-sm: var(--spacing-unit);
+   /* 8px */
+   --spacing-md: calc(var(--spacing-unit) * 2);
+   /* 16px */
+   --spacing-lg: calc(var(--spacing-unit) * 3);
+   /* 24px */
+   --spacing-xl: calc(var(--spacing-unit) * 4);
+   /* 32px */
+   --spacing-2xl: calc(var(--spacing-unit) * 6);
+   /* 48px */
+   --spacing-3xl: calc(var(--spacing-unit) * 8);
+   /* 64px */
+
+   /* Paragraph spacing (7pt after in Word → ~12px) */
+   --spacing-paragraph: 0.75rem;
+
+   /* Indentation (794 twips ≈ 0.55in ≈ 40px, scaled for web) */
+   --indent-standard: 2.5rem;
+   /* 40px - numbered/offset paragraphs */
+   --indent-deep: 5rem;
+   /* 80px - law/quote citations */
+
+   /* ==========================================================================
+     LAYOUT
+     ========================================================================== */
+
+   /* Content widths */
+   --content-width-narrow: 42rem;
+   /* ~672px - optimal reading width */
+   --content-width-medium: 52rem;
+   /* ~832px - content pages */
+   --content-width-wide: 72rem;
+   /* ~1152px - full layout */
+
+   /* Page margins */
+   --page-margin-x: clamp(1rem, 5vw, 4rem);
+   --page-margin-y: var(--spacing-2xl);
+
+   /* ==========================================================================
+     BORDERS & DECORATIONS
+     ========================================================================== */
+
+   --border-width: 1px;
+   --border-width-thick: 2px;
+   --border-style: solid;
+   --border-color: var(--color-border);
+
+   /* Standard border shorthand */
+   --border: var(--border-width) var(--border-style) var(--color-border);
+   --border-dark: var(--border-width) var(--border-style) var(--color-border-dark);
+
+   /* ==========================================================================
+     TRANSITIONS
+     ========================================================================== */
+
+   --transition-fast: 150ms ease;
+   --transition-base: 250ms ease;
+   --transition-slow: 400ms ease;
+}

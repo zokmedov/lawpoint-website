@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawpoint Immigration - Component Preview</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <style>
+        /* Preview page specific styles */
+        .preview-section {
+            padding: var(--spacing-2xl) 0;
+            border-bottom: var(--border);
+        }
+
+        .preview-section:last-child {
+            border-bottom: none;
+        }
+
+        .preview-label {
+            display: inline-block;
+            font-family: var(--font-family-ui);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-background);
+            background-color: var(--color-text);
+            padding: var(--spacing-xs) var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .preview-description {
+            font-family: var(--font-family-ui);
+            font-size: var(--font-size-xs);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-lg);
+            padding-left: var(--spacing-md);
+            border-left: 2px solid var(--color-border);
+        }
+
+        .demo-box {
+            background-color: var(--color-background-pure);
+            border: var(--border);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .demo-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+            align-items: flex-start;
+        }
+
+        .demo-col {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        /* Color swatches */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .color-swatch {
+            border: var(--border);
+        }
+
+        .color-swatch-preview {
+            height: 50px;
+        }
+
+        .color-swatch-info {
+            padding: var(--spacing-sm);
+            font-family: var(--font-family-ui);
+            font-size: var(--font-size-xs);
+        }
+
+        .color-swatch-name {
+            font-weight: 600;
+        }
+
+        .color-swatch-value {
+            color: var(--color-text-secondary);
+        }
+    </style>
+</head>
+
+<body class="font-serif">
+
+    <!-- MAIN MENU -->
+    <nav class="main-menu">
+        <a href="#" class="menu-logo">
+            <img src="images/logo.svg" alt="Lawpoint Immigration" class="menu-logo-img">
+        </a>
+
+        <div class="menu-nav" id="menuNav">
+            <a href="#about" class="menu-nav-link">About</a>
+            <a href="#services" class="menu-nav-link">Services</a>
+            <a href="#contacts" class="menu-nav-link">Contacts</a>
+            <a href="#navigation" class="menu-nav-link">Navigation</a>
+            <a href="#consultation" class="menu-nav-link menu-cta">Consultation</a>
+        </div>
+
+        <div class="menu-controls">
+            <!-- Font Toggle -->
+            <button class="font-toggle" id="fontToggle" title="Toggle font style">
+                <span class="serif-label">Aa</span> / <span class="sans-label">Aa</span>
+            </button>
+
+            <!-- Width Toggle -->
+            <button class="width-toggle" id="widthToggle" title="Toggle content width">
+                <svg class="width-toggle-icon" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M2 4h12v1H2V4zm0 3h12v1H2V7zm0 3h8v1H2v-1z" />
+                </svg>
+                Column
+            </button>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span class="menu-toggle-icon"></span>
+        </button>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content layout-column" id="mainContent">
+
+        <!-- Hero Section -->
+        <section class="preview-section">
+            <h1>Lawpoint Immigration</h1>
+            <p class="text-normal" style="font-size: var(--font-size-lg);">
+                Professional Canadian immigration law services. This preview page demonstrates
+                all UI components including the sticky menu, responsive layout, font toggle,
+                buttons, and enhanced link styles.
+            </p>
+
+            <div class="button-row">
+                <a href="#consultation" class="btn btn-primary">Book a Consultation</a>
+                <a href="#services" class="btn btn-secondary">Our Services</a>
+            </div>
+        </section>
+
+        <!-- Menu Preview -->
+        <section class="preview-section" id="about">
+            <span class="preview-label">Main Menu</span>
+            <p class="preview-description">
+                Sticky navigation menu with 5 items. The "Consultation" button is highlighted as a CTA.
+                On mobile, the menu collapses into a hamburger icon. Use the font toggle (Aa) and
+                width toggle (Column/Full) in the top right.
+            </p>
+
+            <div class="demo-box">
+                <p class="text-normal">
+                    <strong>Menu Items:</strong> About, Services, Contacts, Navigation, Consultation
+                </p>
+                <p class="text-normal">
+                    <strong>Features:</strong>
+                </p>
+                <ul class="bullet-list">
+                    <li>Sticky positioning (stays at top while scrolling)</li>
+                    <li>Border highlight on hover for each item</li>
+                    <li>CTA button styling for "Consultation"</li>
+                    <li>Mobile hamburger menu</li>
+                    <li>Font and width toggle controls</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Buttons Preview -->
+        <section class="preview-section" id="services">
+            <span class="preview-label">Buttons</span>
+            <p class="preview-description">
+                Rectangular buttons with filled backgrounds. Primary buttons use the accent color (dark blue).
+                Buttons change color on hover. Up to 5 buttons can be arranged in a horizontal row.
+            </p>
+
+            <h3>Button Styles</h3>
+            <div class="demo-box">
+                <div class="demo-row">
+                    <div class="demo-col">
+                        <h4>Primary (Filled)</h4>
+                        <button class="btn btn-primary">Primary Button</button>
+                    </div>
+                    <div class="demo-col">
+                        <h4>Secondary (Outlined)</h4>
+                        <button class="btn btn-secondary">Secondary Button</button>
+                    </div>
+                    <div class="demo-col">
+                        <h4>Ghost (Minimal)</h4>
+                        <button class="btn btn-ghost">Ghost Button</button>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Button Sizes</h3>
+            <div class="demo-box">
+                <div class="button-row button-row-left">
+                    <button class="btn btn-primary btn-sm">Small</button>
+                    <button class="btn btn-primary">Default</button>
+                    <button class="btn btn-primary btn-lg">Large</button>
+                </div>
+            </div>
+
+            <h3>Button Row (Up to 5 buttons)</h3>
+            <div class="demo-box">
+                <div class="button-row button-row-center">
+                    <a href="#" class="btn btn-secondary">Option 1</a>
+                    <a href="#" class="btn btn-secondary">Option 2</a>
+                    <a href="#" class="btn btn-secondary">Option 3</a>
+                    <a href="#" class="btn btn-secondary">Option 4</a>
+                    <a href="#" class="btn btn-primary">Primary Action</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Links Preview -->
+        <section class="preview-section" id="contacts">
+            <span class="preview-label">Enhanced Links</span>
+            <p class="preview-description">
+                Links are styled with the accent color and have interactive hover effects.
+                The underline thickens on hover to clearly indicate clickability.
+            </p>
+
+            <div class="demo-box">
+                <p class="text-normal">
+                    Standard links are styled like this: <a href="#">Click here to learn more</a> about
+                    our immigration services. You can also <a href="#">contact our office</a> or
+                    visit the <a href="#">Immigration, Refugees and Citizenship Canada</a> website.
+                </p>
+
+                <p class="text-normal" style="margin-top: var(--spacing-lg);">
+                    Links with background highlight:
+                    <a href="#" class="link-highlight">Hover over me</a> to see the subtle background effect.
+                </p>
+            </div>
+        </section>
+
+        <!-- Font Toggle Preview -->
+        <section class="preview-section" id="navigation">
+            <span class="preview-label">Font Toggle</span>
+            <p class="preview-description">
+                Users can switch between serif (Times New Roman) and sans-serif (Inter) fonts.
+                On mobile devices (&lt;640px), sans-serif is automatically used for better readability.
+            </p>
+
+            <div class="demo-box">
+                <div class="demo-row">
+                    <div class="demo-col">
+                        <h4>Current Font Sample</h4>
+                        <p class="text-normal">
+                            The quick brown fox jumps over the lazy dog. This sentence contains
+                            every letter of the alphabet and demonstrates the current font style.
+                        </p>
+                        <p class="text-normal">
+                            <strong>Bold text</strong> and <em>italic text</em> are also supported.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-normal" style="margin-top: var(--spacing-lg);">
+                    <strong>Try it:</strong> Click the "Aa / Aa" button in the menu to toggle between fonts.
+                </p>
+            </div>
+        </section>
+
+        <!-- Width Toggle Preview -->
+        <section class="preview-section">
+            <span class="preview-label">Width Toggle</span>
+            <p class="preview-description">
+                Users can switch between column view (optimal reading width, ~52rem) and
+                full-width view. Column view is better for reading; full-width is better
+                for viewing images or complex layouts.
+            </p>
+
+            <div class="demo-box">
+                <p class="text-normal">
+                    <strong>Try it:</strong> Click the "Column" / "Full" button in the menu to toggle the content width.
+                </p>
+                <p class="text-normal">
+                    Current mode: <strong id="currentWidthMode">Column</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- Responsive Design Preview -->
+        <section class="preview-section" id="consultation">
+            <span class="preview-label">Responsive Design</span>
+            <p class="preview-description">
+                The layout adapts to different screen sizes. Resize your browser window to see
+                mobile (≤640px), tablet (641-1024px), and desktop (≥1025px) layouts.
+            </p>
+
+            <div class="demo-box">
+                <h4>Responsive Features</h4>
+                <ul class="bullet-list">
+                    <li>Menu collapses to hamburger on mobile</li>
+                    <li>Sans-serif font auto-enabled on mobile for better readability</li>
+                    <li>Reduced spacing and font sizes on smaller screens</li>
+                    <li>Button rows stack vertically on mobile</li>
+                    <li>Indentation reduced on mobile to preserve reading space</li>
+                </ul>
+            </div>
+
+            <div class="button-row button-row-center">
+                <a href="#" class="btn btn-primary btn-lg">Schedule Your Consultation</a>
+            </div>
+        </section>
+
+        <!-- Color Palette -->
+        <section class="preview-section">
+            <span class="preview-label">Color Palette</span>
+            <p class="preview-description">
+                The color scheme is based on your legal document styling, with added button accent colors.
+            </p>
+
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-swatch-preview" style="background-color: #FCFCFC; border-bottom: var(--border);">
+                    </div>
+                    <div class="color-swatch-info">
+                        <div class="color-swatch-name">Background</div>
+                        <div class="color-swatch-value">#FCFCFC</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-swatch-preview" style="background-color: #1A1A1A;"></div>
+                    <div class="color-swatch-info">
+                        <div class="color-swatch-name">Text</div>
+                        <div class="color-swatch-value">#1A1A1A</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-swatch-preview" style="background-color: #17365D;"></div>
+                    <div class="color-swatch-info">
+                        <div class="color-swatch-name">Primary / Button</div>
+                        <div class="color-swatch-value">#17365D</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-swatch-preview" style="background-color: #0D2240;"></div>
+                    <div class="color-swatch-info">
+                        <div class="color-swatch-name">Button Hover</div>
+                        <div class="color-swatch-value">#0D2240</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-swatch-preview" style="background-color: #632423;"></div>
+                    <div class="color-swatch-info">
+                        <div class="color-swatch-name">Quote</div>
+                        <div class="color-swatch-value">#632423</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-swatch-preview" style="background-color: #D4D4D4;"></div>
+                    <div class="color-swatch-info">
+                        <div class="color-swatch-name">Border</div>
+                        <div class="color-swatch-value">#D4D4D4</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer
+            style="text-align: center; padding: var(--spacing-2xl) 0; border-top: 2px solid var(--color-text); margin-top: var(--spacing-2xl);">
+            <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+                Lawpoint Immigration — Component Preview v1.0
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- JavaScript for Toggle Functionality -->
+    <script>
+        // Font T        e
+        const fontToggle = document.getElementById('font        le');
+        const body = de        ody;
+
+        fontToggle.addEventListener('cl            () => {
+            if (body.classList.contai                -serif')) {
+                body.clas                move('font-serif');
+                         y.classLi                font-sans');
+            } else {
+                        body.classList.remove('font-            ;
+                        body.classLis        d('font-serif');
+            }
+        });
+
+        // Width        gle
+        const widthToggle = document.getElementById('wid        ggle');
+        const mainContent = document.getElementById('mainConte;             const currentWidthMode = document.getElem            d('currentWidthMode');
+
+        widthToggle.addEventLis                lick', () => {
+            if (mainContent.clas                ntains('layout-column')) {
+                               tent.classList.remove('layout-column');
+                mainContent.classList.add('layout-full');
+                widthToggle.innerHTML = `
+          <svg class="width-toggle-icon" viewBox="0 0 16 16" fill="currentColor                       <path d="M2 4h12v1H2V4zm0 3h12v1H2V7zm            v1H2v-1z"                     </svg>
+          Full
+        `;
+                        currentWidthMode.textContent = 'Full Width'                      } else {
+                mainContent.classList.remove('layout-full');
+                mainContent.classList.add('layout-column');
+                widthToggle.innerHTML = `
+          <svg class="width-toggle-icon" v                0 0 16 16" fill="currentColor">
+                     th        M2 4h        H2V4zm0 3h12v1H2V7zm0         1H2v-1z"/>
+          </svg>
+          Column
+        `;
+                    currentWidthMode.textContent = 'Column';
+            }
+        });
+
+        // Mobile Menu Toggl                const menuToggle = document.getEl        tById        nuToggle');
+        const menuNav = docume        etElementById('menuNav');
+
+        menuToggle.addEventListene            ck', () => {
+            menuNav.classL                le('is-open');
+        });
+
+        /            e mo         menwhenng a link
+        menuNav.querySelectorAll('.menu-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuNav.classList.remove('is-open');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

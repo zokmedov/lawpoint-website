@@ -1,0 +1,202 @@
+/* ==========================================================================
+   LAWPOINT IMMIGRATION - LAYOUT STYLES
+   Responsive layout, width toggles, and page structure
+   ========================================================================== */
+
+/* ==========================================================================
+   WIDTH MODE TOGGLE (Column vs Full Width)
+   ========================================================================== */
+
+/* Default: Column view (optimal reading width) */
+.layout-column {
+    max-width: var(--content-width-medium);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--page-margin-x);
+    padding-right: var(--page-margin-x);
+}
+
+/* Full width mode */
+.layout-full {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--page-margin-x);
+    padding-right: var(--page-margin-x);
+}
+
+/* Constrained content within full-width sections */
+.layout-full .content-constrained {
+    max-width: var(--content-width-medium);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================================================
+   FONT MODE TOGGLE (Serif vs Sans-serif)
+   ========================================================================== */
+
+/* Default: Serif (legal document style) */
+body.font-serif {
+    --font-family-body: var(--font-family-serif);
+    --font-family-heading: var(--font-family-serif);
+}
+
+/* Sans-serif mode */
+body.font-sans {
+    --font-family-body: var(--font-family-sans);
+    --font-family-heading: var(--font-family-sans);
+}
+
+/* ==========================================================================
+   MAIN PAGE STRUCTURE
+   ========================================================================== */
+
+/* Account for sticky menu */
+body {
+    padding-top: var(--menu-height);
+}
+
+/* Main content area */
+.main-content {
+    min-height: calc(100vh - var(--menu-height));
+}
+
+/* Page sections */
+.section {
+    padding-top: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
+}
+
+.section-sm {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT - MOBILE FIRST
+   ========================================================================== */
+
+/* Mobile (up to 640px) */
+@media (max-width: 640px) {
+    body {
+        padding-top: var(--menu-height-mobile);
+    }
+
+    /* Force sans-serif on mobile for better readability */
+    body:not(.font-serif-forced) {
+        --font-family-body: var(--font-family-sans);
+        --font-family-heading: var(--font-family-sans);
+    }
+
+    /* Reduce spacing on mobile */
+    .section {
+        padding-top: var(--spacing-2xl);
+        padding-bottom: var(--spacing-2xl);
+    }
+
+    .section-sm {
+        padding-top: var(--spacing-xl);
+        padding-bottom: var(--spacing-xl);
+    }
+
+    /* Reduce indentation on mobile */
+    :root {
+        --indent-standard: 1.5rem;
+        --indent-deep: 2.5rem;
+    }
+
+    /* Adjust font sizes for mobile */
+    :root {
+        --font-size-h1: 1.75rem;
+        --font-size-h2: 1.5rem;
+        --font-size-h3: 1.25rem;
+    }
+}
+
+/* Tablet (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+    :root {
+        --indent-standard: 2rem;
+        --indent-deep: 3.5rem;
+    }
+
+    :root {
+        --font-size-h1: 2rem;
+        --font-size-h2: 1.625rem;
+    }
+}
+
+/* Desktop (1025px+) */
+@media (min-width: 1025px) {
+    /* Full desktop experience - default values apply */
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+
+/* Text alignment */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Visibility utilities */
+.hide-mobile {
+    display: block;
+}
+
+.show-mobile {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .show-mobile {
+        display: block !important;
+    }
+}
+
+/* Spacing utilities */
+.mt-0 {
+    margin-top: 0;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mt-lg {
+    margin-top: var(--spacing-lg);
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
+
+.mt-xl {
+    margin-top: var(--spacing-xl);
+}
+
+.mb-xl {
+    margin-bottom: var(--spacing-xl);
+}
+
+.mt-2xl {
+    margin-top: var(--spacing-2xl);
+}
+
+.mb-2xl {
+    margin-bottom: var(--spacing-2xl);
+}
