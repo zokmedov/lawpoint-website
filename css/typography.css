@@ -87,20 +87,9 @@ p {
 }
 
 /* ==========================================================================
-   (NUMBERED) - Numbered Paragraphs
+   (NUMBERED) - Numbered Lists
    Word: 12pt, left indent 794 twips, numbered list
    ========================================================================== */
-
-.text-numbered {
-    font-family: var(--font-family-body);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-normal);
-    line-height: var(--line-height-base);
-    color: var(--color-text);
-    margin-top: 0;
-    margin-bottom: var(--spacing-paragraph);
-    padding-left: var(--indent-standard);
-}
 
 /* Numbered list container */
 ol.numbered-list {
@@ -108,7 +97,6 @@ ol.numbered-list {
     list-style-position: outside;
     margin: 0;
     padding-left: var(--indent-standard);
-    counter-reset: item;
 }
 
 ol.numbered-list>li {
@@ -116,11 +104,10 @@ ol.numbered-list>li {
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     margin-bottom: var(--spacing-paragraph);
-    padding-left: 0.5rem;
 }
 
 /* ==========================================================================
-   (OFFSET) - Offset Paragraphs (same indent as numbered, no number)
+   (OFFSET) - Offset Paragraphs (same indent as subsection)
    Word: 12pt, left indent 794 twips
    ========================================================================== */
 
@@ -132,8 +119,7 @@ ol.numbered-list>li {
     color: var(--color-text);
     margin-top: 0;
     margin-bottom: var(--spacing-paragraph);
-    /* Aligns with text after numbered list numbers */
-    padding-left: calc(var(--indent-standard) + 0.5rem);
+    padding-left: var(--indent-standard);
 }
 
 /* ==========================================================================
@@ -173,14 +159,13 @@ ul.bullet-list,
 ul.bullet-list>li {
     position: relative;
     margin-bottom: calc(var(--spacing-paragraph) / 2);
-    padding-left: 1.5rem;
 }
 
-/* Em dash bullet */
+/* Em dash bullet (hangs left of text) */
 ul.bullet-list>li::before {
-    content: "\2014";
+    content: "\2014\2002";
     position: absolute;
-    left: 0;
+    right: 100%;
     color: var(--color-text);
 }
 
@@ -271,6 +256,13 @@ b {
 em,
 i {
     font-style: italic;
+}
+
+/* Highlight (yellow marker) */
+.highlight {
+    background-color: rgba(255, 235, 59, 0.45);
+    padding: 0.05em 0.15em;
+    border-radius: 2px;
 }
 
 /* Horizontal Rule - Simple dividing line */

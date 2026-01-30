@@ -31,8 +31,8 @@ body:has(.layout-column) .layout-column {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--page-margin-x);
-    padding-right: var(--page-margin-x);
+    padding-left: clamp(1.5rem, 8vw, 8rem);
+    padding-right: clamp(1.5rem, 8vw, 8rem);
     background-color: var(--color-background);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.06);
 }
@@ -47,6 +47,8 @@ body:has(.layout-column) .layout-column {
 
     .layout-column .page {
         box-shadow: none;
+        padding-left: var(--page-margin-x);
+        padding-right: var(--page-margin-x);
     }
 }
 
@@ -79,6 +81,18 @@ body:has(.layout-column) .layout-column {
 body.font-serif {
     --font-family-body: var(--font-family-serif);
     --font-family-heading: var(--font-family-serif);
+}
+
+/* Font sizes scaled ~7% in content area to match Inter's perceived size (x-height compensation) */
+body.font-serif .main-content {
+    --font-size-base: 1.2rem;
+    --font-size-sm: 1.075rem;
+    --font-size-xs: 0.9375rem;
+    --font-size-lg: 1.35rem;
+    --font-size-h1: 2.4rem;
+    --font-size-h2: 1.875rem;
+    --font-size-h3: 1.475rem;
+    --font-size-h4: 1.2rem;
 }
 
 /* Sans-serif mode */

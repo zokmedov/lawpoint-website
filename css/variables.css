@@ -173,8 +173,8 @@
    /* Content widths */
    --content-width-narrow: 42rem;
    /* ~672px - optimal reading width */
-   --content-width-medium: 52rem;
-   /* ~832px - content pages */
+   --content-width-medium: 60rem;
+   /* ~960px - content pages */
    --content-width-wide: 72rem;
    /* ~1152px - full layout */
 
